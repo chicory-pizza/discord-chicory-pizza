@@ -1,0 +1,43 @@
+.members {
+	list-style: none;
+	margin-top: 4px;
+}
+
+.member {
+	display: inline;
+	margin-right: 4px;
+}
+
+.avatar {
+	display: inline-block;
+	position: relative;
+}
+
+.image {
+	border-radius: 100%;
+	display: block;
+}
+
+.statusOnline,
+.statusIdle,
+.statusDnd {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+
+	border-radius: 100%;
+}
+
+.statusOnline {
+	background: rgb(59, 165, 93);
+}
+
+.statusIdle {
+	background: rgb(250, 168, 26);
+}
+
+.statusDnd {
+	background: rgb(237, 66, 69);
+}

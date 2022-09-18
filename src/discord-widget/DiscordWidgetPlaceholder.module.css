@@ -1,0 +1,14 @@
+.container {
+	visibility: hidden;
+}
+
+.members {
+	margin-top: 4px;
+}
+
+.member {
+	display: inline-block;
+	height: 32px;
+	margin-right: 4px;
+	width: 32px;
+}
