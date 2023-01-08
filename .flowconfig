@@ -9,7 +9,6 @@
 
 [lints]
 deprecated-type=error
-deprecated-utility=error
 implicit-inexact-object=error
 nonstrict-import=error
 sketchy-null=error
@@ -18,13 +17,11 @@ unnecessary-invariant=error
 unnecessary-optional-chain=error
 unsafe-getters-setters=error
 untyped-type-import=error
+unused-promise-in-async-scope=error
 
 [options]
 emoji=true
 exact_by_default=true
-experimental.enforce_local_inference_annotations=true
-experimental.enforce_this_annotations=true
-experimental.enforce_class_annotations=true
 inference_mode=constrain_writes
 react.runtime=automatic
 
