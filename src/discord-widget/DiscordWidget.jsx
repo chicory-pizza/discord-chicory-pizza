@@ -25,7 +25,7 @@ export default function DiscordWidget(props: Props): React$Node {
 
 	return (
 		<>
-			<div>100+ members, {props.presenceCount} online</div>
+			<div>130+ members, {props.presenceCount} online</div>
 
 			<ul className={styles.members}>
 				{props.members.map((member) => {
@@ -35,6 +35,7 @@ export default function DiscordWidget(props: Props): React$Node {
 								<img
 									alt={member.username + '’s avatar'}
 									className={styles.image}
+									crossOrigin
 									height={32}
 									loading="lazy"
 									src={member.avatar_url}
