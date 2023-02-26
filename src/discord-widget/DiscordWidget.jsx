@@ -5,6 +5,7 @@ import styles from './DiscordWidget.module.css';
 import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
 
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
+import DiscordWidgetMember from './DiscordWidgetMember';
 
 type Props = $ReadOnly<{
 	loading: boolean,
@@ -25,37 +26,11 @@ export default function DiscordWidget(props: Props): React$Node {
 
 	return (
 		<>
-			<div>130+ members, {props.presenceCount} online</div>
+			<div>140+ members, {props.presenceCount} online</div>
 
 			<ul className={styles.members}>
 				{props.members.map((member) => {
-					return (
-						<li className={styles.member} key={member.id}>
-							<div className={styles.avatar} title={member.username}>
-								<img
-									alt={member.username + '’s avatar'}
-									className={styles.image}
-									crossOrigin
-									height={32}
-									loading="lazy"
-									src={member.avatar_url}
-									width={32}
-								/>
-
-								<span
-									className={
-										member.status === 'online'
-											? styles.statusOnline
-											: member.status === 'idle'
-											? styles.statusIdle
-											: member.status === 'dnd'
-											? styles.statusDnd
-											: ''
-									}
-								/>
-							</div>
-						</li>
-					);
+					return <DiscordWidgetMember member={member} />;
 				})}
 			</ul>
 		</>
