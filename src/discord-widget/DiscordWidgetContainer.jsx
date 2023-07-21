@@ -21,7 +21,7 @@ export default function DiscordWidgetContainer(): React$Node {
 			'GET',
 			'https://discord.com/api/guilds/947898290735833128/widget.json?_=' +
 				Date.now(),
-			true
+			true,
 		);
 		request.onload = () => {
 			let json: {...};
