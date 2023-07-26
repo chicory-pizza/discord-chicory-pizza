@@ -42,7 +42,13 @@ export default function DiscordWidgetContainer(): React$Node {
 				return;
 			}
 
-			const BOTS = ['Carl-bot', 'Chicorobot', 'Color-Chan', 'PluralKit'];
+			const BOTS = [
+				'Carl-bot',
+				'Chicorobot',
+				'Color-Chan',
+				'Pickle',
+				'PluralKit',
+			];
 
 			const members = (json.members: DiscordWidgetMemberType[])
 				.filter((member) => {
