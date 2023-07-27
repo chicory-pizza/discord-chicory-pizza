@@ -1,6 +1,6 @@
-import {defineConfig} from 'vite';
-import preact from '@preact/preset-vite';
 import {flowPlugin, esbuildFlowPlugin} from '@bunchtogether/vite-plugin-flow';
+import preact from '@preact/preset-vite';
+import {defineConfig} from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({

@@ -1,11 +1,9 @@
 // @flow strict
 
-import {h} from 'preact';
-import styles from './DiscordWidgetMember.module.css';
-import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
-
-import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 import {useState} from 'preact/hooks';
+
+import styles from './DiscordWidgetMember.module.css';
+import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 
 type Props = $ReadOnly<{
 	member: DiscordWidgetMemberType,

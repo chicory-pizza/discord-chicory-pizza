@@ -1,9 +1,6 @@
 // @flow strict
 
-import {h} from 'preact';
 import styles from './DiscordWidgetPlaceholder.module.css';
-
-import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 
 export default function DiscordWidgetPlaceholder(): React$Node {
 	const placeholders = [];

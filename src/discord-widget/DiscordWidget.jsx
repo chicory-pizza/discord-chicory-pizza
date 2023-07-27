@@ -1,11 +1,9 @@
 // @flow strict
 
-import {h} from 'preact';
 import styles from './DiscordWidget.module.css';
-import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
-
-import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 import DiscordWidgetMember from './DiscordWidgetMember';
+import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
+import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
 
 type Props = $ReadOnly<{
 	loading: boolean,
@@ -30,7 +28,7 @@ export default function DiscordWidget(props: Props): React$Node {
 
 			<ul className={styles.members}>
 				{props.members.map((member) => {
-					return <DiscordWidgetMember member={member} />;
+					return <DiscordWidgetMember key={member.id} member={member} />;
 				})}
 			</ul>
 		</>

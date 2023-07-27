@@ -1,6 +1,7 @@
 // @flow strict
 
 import {render} from 'preact';
+
 import DiscordWidgetContainer from './discord-widget/DiscordWidgetContainer';
 import './index.css';
 
