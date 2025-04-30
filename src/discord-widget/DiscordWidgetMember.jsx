@@ -38,10 +38,10 @@ export default function DiscordWidgetMember({member}: Props): React$Node {
 						member.status === 'online'
 							? styles.statusOnline
 							: member.status === 'idle'
-							? styles.statusIdle
-							: member.status === 'dnd'
-							? styles.statusDnd
-							: ''
+								? styles.statusIdle
+								: member.status === 'dnd'
+									? styles.statusDnd
+									: ''
 					}
 				/>
 			</div>
