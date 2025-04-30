@@ -1,8 +1,8 @@
 [ignore]
 <PROJECT_ROOT>/dist/.*
-<PROJECT_ROOT>/coverage/.*
-<PROJECT_ROOT>/node_modules/resolve/test/resolver/malformed_package_json/package.json
-<PROJECT_ROOT>/node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/malformed_package_json/package.json
+<PROJECT_ROOT>/node_modules/hermes-eslint/.*
+<PROJECT_ROOT>/node_modules/hermes-estree/.*
+<PROJECT_ROOT>/node_modules/hermes-parser/.*
 
 [include]
 

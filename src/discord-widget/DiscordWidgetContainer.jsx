@@ -82,8 +82,8 @@ export default function DiscordWidgetContainer(): React$Node {
 
 	return (
 		<DiscordWidget
-			loading={isLoading}
 			error={isError}
+			loading={isLoading}
 			members={members}
 			presenceCount={presenceCount}
 		/>
