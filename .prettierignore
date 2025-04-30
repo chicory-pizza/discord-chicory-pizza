@@ -1,6 +1,3 @@
-flow-typed/environments/
-flow-typed/npm/
-
 dist/
 
 package.json

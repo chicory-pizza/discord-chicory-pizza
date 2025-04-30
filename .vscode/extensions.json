@@ -2,7 +2,6 @@
 	"recommendations": [
 		"editorconfig.editorconfig",
 		"dbaeumer.vscode-eslint",
-		"flowtype.flow-for-vscode",
 		"esbenp.prettier-vscode"
 	]
 }

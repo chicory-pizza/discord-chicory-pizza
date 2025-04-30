@@ -1,15 +1,13 @@
-// @flow strict
-
 import {useState} from 'preact/hooks';
 
 import styles from './DiscordWidgetMember.module.css';
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 
-type Props = $ReadOnly<{
-	member: DiscordWidgetMemberType,
+type Props = Readonly<{
+	member: DiscordWidgetMemberType;
 }>;
 
-export default function DiscordWidgetMember({member}: Props): React.Node {
+export default function DiscordWidgetMember({member}: Props) {
 	const [isError, setIsError] = useState(false);
 
 	if (isError) {

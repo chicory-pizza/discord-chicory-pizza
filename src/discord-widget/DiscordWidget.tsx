@@ -1,18 +1,16 @@
-// @flow strict
-
 import styles from './DiscordWidget.module.css';
 import DiscordWidgetMember from './DiscordWidgetMember';
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
 
-type Props = $ReadOnly<{
-	loading: boolean,
-	error: boolean,
-	members: DiscordWidgetMemberType[],
-	presenceCount: number,
+type Props = Readonly<{
+	loading: boolean;
+	error: boolean;
+	members: ReadonlyArray<DiscordWidgetMemberType>;
+	presenceCount: number;
 }>;
 
-export default function DiscordWidget(props: Props): React.Node {
+export default function DiscordWidget(props: Props) {
 	if (props.loading) {
 		return <DiscordWidgetPlaceholder />;
 	}

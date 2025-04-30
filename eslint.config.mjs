@@ -1,58 +1,38 @@
 import js from '@eslint/js';
-import flowtype from 'eslint-plugin-ft-flow';
+import eslintReact from '@eslint-react/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-import hermesParser from 'hermes-eslint';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default tseslint.config(
 	js.configs.recommended,
-	importPlugin.flatConfigs.recommended,
-	importPlugin.flatConfigs.react,
+	tseslint.configs.strict,
+
+	importPlugin.flatConfigs.typescript,
 	jsxA11y.flatConfigs.recommended,
-	react.configs.flat.recommended,
-	react.configs.flat['jsx-runtime'],
+	eslintReact.configs['recommended-typescript'],
 	reactHooks.configs['recommended-latest'],
 	{
 		plugins: {
-			'ft-flow': flowtype,
+			import: importPlugin,
 		},
-	},
-	{
 		rules: {
-			...flowtype.configs.recommended.rules,
-
-			'no-constant-binary-expression': 'error',
 			'no-var': 'error',
 			'no-unused-vars': [
 				'warn',
 				{
 					args: 'none',
-					ignoreRestSiblings: true,
 				},
 			],
 			'prefer-const': 'warn',
 
-			// Was disabled by flowtype.configs.recommended.rules
-			'no-undef': 'error',
-			'ft-flow/define-flow-type': 'error',
-
-			// Prettier already handles this
-			'no-mixed-spaces-and-tabs': 'off',
-			'ft-flow/generic-spacing': 'off',
-			'ft-flow/space-after-type-colon': 'off',
-
-			'ft-flow/newline-after-flow-annotation': 'error',
-			'ft-flow/require-indexer-name': 'error',
-			'ft-flow/require-readonly-react-props': 'error',
-
-			'react/button-has-type': 'error',
-			'react/jsx-sort-props': 'warn',
-			'react/prop-types': 'off',
-
-			'import/no-unresolved': 'off', // bugged
+			// `importPlugin.flatConfigs.recommended` without slow rules
+			// https://typescript-eslint.io/troubleshooting/typed-linting/performance/#eslint-plugin-import
+			'import/export': 'error',
+			'import/no-duplicates': 'warn',
+			'import/no-named-as-default': 'warn',
 			'import/order': [
 				'warn',
 				{
@@ -69,22 +49,9 @@ export default [
 			globals: {
 				...globals.browser,
 			},
-			parser: hermesParser,
-		},
-
-		settings: {
-			'import/extensions': ['.js', '.jsx'],
-
-			react: {
-				version: 'detect',
-				flowVersion: '0.213.1',
-			},
 		},
 	},
 	{
-		files: ['**/*.js', '**/*.jsx'],
+		ignores: ['dist/', 'coverage/'],
 	},
-	{
-		ignores: ['flow-typed/', 'dist/', 'coverage/'],
-	},
-];
+);

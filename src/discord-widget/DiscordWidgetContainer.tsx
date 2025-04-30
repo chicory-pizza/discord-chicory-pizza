@@ -1,11 +1,9 @@
-// @flow strict
-
 import {useEffect, useState} from 'preact/hooks';
 
 import DiscordWidget from './DiscordWidget';
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 
-export default function DiscordWidgetContainer(): React.Node {
+export default function DiscordWidgetContainer() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
 	const [members, setMembers] = useState<DiscordWidgetMemberType[]>([]);
@@ -22,7 +20,7 @@ export default function DiscordWidgetContainer(): React.Node {
 			true,
 		);
 		request.onload = () => {
-			let json: {...};
+			let json;
 			try {
 				json = JSON.parse(request.responseText);
 			} catch (ex) {
@@ -48,7 +46,7 @@ export default function DiscordWidgetContainer(): React.Node {
 				'PluralKit',
 			];
 
-			const members = (json.members: DiscordWidgetMemberType[])
+			const members = (json.members as DiscordWidgetMemberType[])
 				.filter((member) => {
 					return !BOTS.includes(member.username);
 				})
