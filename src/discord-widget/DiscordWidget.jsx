@@ -24,7 +24,7 @@ export default function DiscordWidget(props: Props): React$Node {
 
 	return (
 		<>
-			<div>210+ members, {props.presenceCount} online</div>
+			<div>280+ members, {props.presenceCount} online</div>
 
 			<ul className={styles.members}>
 				{props.members.map((member) => {
