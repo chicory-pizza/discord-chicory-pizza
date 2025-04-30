@@ -18,6 +18,7 @@ export default defineConfig({
 		},
 	},
 	server: {
+		// Keep this in sync with /public/_headers
 		headers: {
 			'X-Powered-By': 'Picnic',
 			'X-Content-Type-Options': 'nosniff',
@@ -27,7 +28,8 @@ export default defineConfig({
 			'Cross-Origin-Embedder-Policy': 'require-corp',
 			'Cross-Origin-Opener-Policy': 'same-origin',
 			'Cross-Origin-Resource-Policy': 'same-origin',
-			'Permissions-Policy': 'interest-cohort=()',
+			'Permissions-Policy':
+				'accelerometer=(),bluetooth=(),camera=(),display-capture=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),midi=(),otp-credentials=(),payment=(),publickey-credentials-create=(),publickey-credentials-get=(),serial=(),usb=(),xr-spatial-tracking=()',
 
 			'Content-Security-Policy': [
 				"default-src 'self'",
@@ -35,20 +37,21 @@ export default defineConfig({
 				// unsafe-inline: For Vite dev server
 				"script-src 'self' 'unsafe-inline'",
 
-				"connect-src 'self' https://discord.com/api/guilds/947898290735833128/widget.json",
-
 				// unsafe-inline: For Vite dev server
 				"style-src 'self' 'unsafe-inline'",
 
 				"img-src 'self' https://cdn.discordapp.com/widget-avatars/",
 
+				"connect-src 'self' https://discord.com/api/guilds/947898290735833128/widget.json",
+				"frame-src 'none'",
+
 				"frame-ancestors 'none'",
 				"base-uri 'none'",
+				"manifest-src 'none'",
+				"media-src 'none'",
 				"object-src 'none'",
+				"worker-src 'none'",
 			].join(';'),
-
-			'Feature-Policy':
-				"accelerometer 'none';ambient-light-sensor 'none';battery 'none';bluetooth 'none';camera 'none';display-capture 'none';gamepad 'none';geolocation 'none';gyroscope 'none';hid 'none';magnetometer 'none';microphone 'none';midi 'none';payment 'none';serial 'none';usb 'none';xr-spatial-tracking 'none';",
 		},
 	},
 });

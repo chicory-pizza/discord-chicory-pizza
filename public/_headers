@@ -7,6 +7,5 @@
 	Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
-  Permissions-Policy: interest-cohort=()
-  Content-Security-Policy: default-src 'self';script-src 'self' https://static.cloudflareinsights.com;connect-src 'self' https://discord.com/api/guilds/947898290735833128/widget.json https://cloudflareinsights.com;img-src 'self' https://cdn.discordapp.com/widget-avatars/;frame-ancestors 'none';base-uri 'none';object-src 'none'
-  Feature-Policy: accelerometer 'none';ambient-light-sensor 'none';battery 'none';bluetooth 'none';camera 'none';display-capture 'none';gamepad 'none';geolocation 'none';gyroscope 'none';hid 'none';magnetometer 'none';microphone 'none';midi 'none';payment 'none';serial 'none';usb 'none';xr-spatial-tracking 'none';
+  Permissions-Policy: accelerometer=(),bluetooth=(),camera=(),display-capture=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),midi=(),otp-credentials=(),payment=(),publickey-credentials-create=(),publickey-credentials-get=(),serial=(),usb=(),xr-spatial-tracking=()
+  Content-Security-Policy: default-src 'self';script-src 'self' https://static.cloudflareinsights.com;img-src 'self' https://cdn.discordapp.com/widget-avatars/;connect-src 'self' https://discord.com/api/guilds/947898290735833128/widget.json https://cloudflareinsights.com;frame-src 'none';frame-ancestors 'none';base-uri 'none';manifest-src 'none';media-src 'none';object-src 'none;worker-src 'none''
