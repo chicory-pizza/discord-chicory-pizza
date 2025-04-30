@@ -8,4 +8,4 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Permissions-Policy: accelerometer=(),bluetooth=(),camera=(),display-capture=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),midi=(),otp-credentials=(),payment=(),publickey-credentials-create=(),publickey-credentials-get=(),serial=(),usb=(),xr-spatial-tracking=()
-  Content-Security-Policy: default-src 'self';script-src 'self' https://static.cloudflareinsights.com;img-src 'self' https://cdn.discordapp.com/widget-avatars/;connect-src 'self' https://discord.com/api/guilds/947898290735833128/widget.json https://cloudflareinsights.com;frame-src 'none';frame-ancestors 'none';base-uri 'none';manifest-src 'none';media-src 'none';object-src 'none;worker-src 'none''
+  Content-Security-Policy: default-src 'self';script-src 'self' https://static.cloudflareinsights.com;img-src 'self' https://cdn.discordapp.com/widget-avatars/;connect-src 'self' https://discord.com/api/guilds/947898290735833128/widget.json https://cloudflareinsights.com;frame-src 'none';frame-ancestors 'none';base-uri 'none';manifest-src 'none';media-src 'none';object-src 'none';worker-src 'none'
