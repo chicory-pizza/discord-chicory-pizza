@@ -1,5 +1,7 @@
+flow-typed/environments/
+flow-typed/npm/
+
 dist/
 
-flow-typed/npm/
 package.json
 package-lock.json

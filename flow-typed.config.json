@@ -1,0 +1,4 @@
+{
+	"env": ["dom", "bom", "cssom", "serviceworkers", "streams"],
+	"ignore": ["lodash"]
+}

@@ -5,7 +5,7 @@ import {useEffect, useState} from 'preact/hooks';
 import DiscordWidget from './DiscordWidget';
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 
-export default function DiscordWidgetContainer(): React$Node {
+export default function DiscordWidgetContainer(): React.Node {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
 	const [members, setMembers] = useState<DiscordWidgetMemberType[]>([]);

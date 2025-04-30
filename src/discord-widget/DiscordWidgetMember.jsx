@@ -9,7 +9,7 @@ type Props = $ReadOnly<{
 	member: DiscordWidgetMemberType,
 }>;
 
-export default function DiscordWidgetMember({member}: Props): React$Node {
+export default function DiscordWidgetMember({member}: Props): React.Node {
 	const [isError, setIsError] = useState(false);
 
 	if (isError) {
@@ -22,7 +22,7 @@ export default function DiscordWidgetMember({member}: Props): React$Node {
 				<img
 					alt={member.username + '’s avatar'}
 					className={styles.image}
-					crossOrigin
+					crossOrigin="anonymous"
 					height={32}
 					loading="lazy"
 					onError={() => {

@@ -24,11 +24,10 @@
 		"start": "vite"
 	},
 	"dependencies": {
-		"@babel/preset-flow": "7.25.9",
-		"flow-bin": "0.213.1",
 		"preact": "10.26.5"
 	},
 	"devDependencies": {
+		"@babel/preset-flow": "7.25.9",
 		"@bunchtogether/vite-plugin-flow": "1.0.2",
 		"@eslint/js": "9.25.1",
 		"@preact/preset-vite": "2.10.1",
@@ -38,9 +37,11 @@
 		"eslint-plugin-jsx-a11y": "6.10.2",
 		"eslint-plugin-react": "7.37.5",
 		"eslint-plugin-react-hooks": "5.2.0",
+		"flow-bin": "0.269.1",
 		"globals": "16.0.0",
 		"hermes-eslint": "0.28.1",
 		"prettier": "3.5.3",
+		"prettier-plugin-hermes-parser": "0.28.1",
 		"vite": "6.3.4"
 	}
 }

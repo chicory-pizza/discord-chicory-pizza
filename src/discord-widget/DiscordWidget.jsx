@@ -12,7 +12,7 @@ type Props = $ReadOnly<{
 	presenceCount: number,
 }>;
 
-export default function DiscordWidget(props: Props): React$Node {
+export default function DiscordWidget(props: Props): React.Node {
 	if (props.loading) {
 		return <DiscordWidgetPlaceholder />;
 	}
