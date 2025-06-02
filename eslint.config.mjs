@@ -8,7 +8,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
 	js.configs.recommended,
-	tseslint.configs.strict,
+	tseslint.configs.strict, // strictTypeChecked,
 
 	importPlugin.flatConfigs.typescript,
 	jsxA11y.flatConfigs.recommended,
@@ -49,7 +49,15 @@ export default tseslint.config(
 			globals: {
 				...globals.browser,
 			},
+			parserOptions: {
+				projectService: true,
+				tsconfigRootDir: import.meta.dirname,
+			},
 		},
+	},
+	{
+		files: ['**/*.mjs'],
+		extends: [tseslint.configs.disableTypeChecked],
 	},
 	{
 		ignores: ['dist/', 'coverage/'],
