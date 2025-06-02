@@ -26,5 +26,5 @@ jobs:
 
       - run: npm run tsc -- --build
       - run: npm run lint
-      # - run: npm test
+      - run: npm test
       - run: npm run prettier -- --check

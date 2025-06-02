@@ -1,8 +1,10 @@
 import js from '@eslint/js';
 import eslintReact from '@eslint-react/eslint-plugin';
+import vitest from '@vitest/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
+import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -54,6 +56,10 @@ export default tseslint.config(
 				tsconfigRootDir: import.meta.dirname,
 			},
 		},
+	},
+	{
+		files: ['tests/**'],
+		extends: [testingLibrary.configs['flat/react'], vitest.configs.recommended],
 	},
 	{
 		files: ['**/*.mjs'],

@@ -3,6 +3,8 @@ import DiscordWidgetMember from './DiscordWidgetMember';
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
 
+export const MEMBER_COUNT_ESTIMATE = 280;
+
 type Props = Readonly<{
 	loading: boolean;
 	error: boolean;
@@ -22,9 +24,11 @@ export default function DiscordWidget(props: Props) {
 
 	return (
 		<>
-			<div>280+ members, {props.presenceCount} online</div>
+			<div>
+				{MEMBER_COUNT_ESTIMATE}+ members, {props.presenceCount} online
+			</div>
 
-			<ul className={styles.members}>
+			<ul className={styles.members} data-testid="members">
 				{props.members.map((member) => {
 					return <DiscordWidgetMember key={member.id} member={member} />;
 				})}

@@ -21,6 +21,7 @@
 		"prettier": "prettier .",
 		"preview": "vite preview",
 		"start": "vite",
+		"test": "vitest",
 		"tsc": "tsc"
 	},
 	"dependencies": {
@@ -30,14 +31,20 @@
 		"@eslint-react/eslint-plugin": "1.50.0",
 		"@eslint/js": "9.28.0",
 		"@preact/preset-vite": "2.10.1",
+		"@testing-library/preact": "3.2.4",
+		"@vitest/eslint-plugin": "1.2.1",
 		"eslint": "9.28.0",
 		"eslint-plugin-import": "2.31.0",
 		"eslint-plugin-jsx-a11y": "6.10.2",
 		"eslint-plugin-react-hooks": "5.2.0",
+		"eslint-plugin-testing-library": "7.3.0",
 		"globals": "16.2.0",
+		"happy-dom": "17.5.6",
+		"msw": "2.8.7",
 		"prettier": "3.5.3",
 		"typescript": "5.8.3",
 		"typescript-eslint": "8.33.0",
-		"vite": "6.3.5"
+		"vite": "6.3.5",
+		"vitest": "3.2.0"
 	}
 }

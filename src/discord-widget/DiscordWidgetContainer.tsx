@@ -3,6 +3,9 @@ import {useEffect, useState} from 'preact/hooks';
 import DiscordWidget from './DiscordWidget';
 import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
 
+export const WIDGET_API_URL =
+	'https://discord.com/api/guilds/947898290735833128/widget.json';
+
 export default function DiscordWidgetContainer() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
@@ -13,22 +16,16 @@ export default function DiscordWidgetContainer() {
 		const request = new XMLHttpRequest();
 
 		// Cache-bust to ensure we get proper CORS headers, not cached from another origin
-		request.open(
-			'GET',
-			'https://discord.com/api/guilds/947898290735833128/widget.json?_=' +
-				Date.now(),
-			true,
-		);
+		request.open('GET', WIDGET_API_URL + '?_=' + Date.now(), true);
 		request.onload = () => {
 			let json;
 			try {
 				json = JSON.parse(request.responseText);
 			} catch (ex) {
-				console.error(ex);
+				console.error('Failed to load Discord members', ex);
 
 				setIsLoading(false);
 				setIsError(true);
-
 				return;
 			}
 
@@ -68,6 +65,8 @@ export default function DiscordWidgetContainer() {
 			setPresenceCount(Math.max(0, json.presence_count - BOTS.length));
 		};
 		request.onerror = () => {
+			console.error('Failed to load Discord members');
+
 			setIsLoading(false);
 			setIsError(true);
 		};
