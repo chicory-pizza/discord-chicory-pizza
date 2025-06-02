@@ -24,7 +24,7 @@ export default function DiscordWidgetContainer() {
 		const request = new XMLHttpRequest();
 
 		// Cache-bust to ensure we get proper CORS headers, not cached from another origin
-		request.open('GET', WIDGET_API_URL + '?_=' + Date.now(), true);
+		request.open('GET', WIDGET_API_URL + '?_=' + Date.now().toString(), true);
 		request.onload = () => {
 			let json;
 			try {
@@ -32,12 +32,6 @@ export default function DiscordWidgetContainer() {
 			} catch (ex) {
 				console.error('Failed to load Discord members', ex);
 
-				setIsLoading(false);
-				setIsError(true);
-				return;
-			}
-
-			if (!json.members) {
 				setIsLoading(false);
 				setIsError(true);
 				return;

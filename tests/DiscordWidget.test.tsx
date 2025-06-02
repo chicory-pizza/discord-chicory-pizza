@@ -17,7 +17,9 @@ test('renders members', async () => {
 	render(<DiscordWidgetContainer />);
 
 	expect(
-		await screen.findByText(`${MEMBER_COUNT_ESTIMATE}+ members, 73 online`),
+		await screen.findByText(
+			`${MEMBER_COUNT_ESTIMATE.toString()}+ members, 73 online`,
+		),
 	).not.toBeNull();
 
 	const membersDiv = await screen.findByTestId('members');
@@ -43,7 +45,9 @@ test('API failure', async () => {
 		'Failed to load Discord members',
 		new SyntaxError('Unexpected end of JSON input'),
 	);
-	expect(screen.queryByText(`${MEMBER_COUNT_ESTIMATE}+ members`)).toBeNull();
+	expect(
+		screen.queryByText(`${MEMBER_COUNT_ESTIMATE.toString()}+ members`),
+	).toBeNull();
 });
 
 test('network failure', async () => {
@@ -64,5 +68,7 @@ test('network failure', async () => {
 	expect(consoleMock).toHaveBeenLastCalledWith(
 		'Failed to load Discord members',
 	);
-	expect(screen.queryByText(`${MEMBER_COUNT_ESTIMATE}+ members`)).toBeNull();
+	expect(
+		screen.queryByText(`${MEMBER_COUNT_ESTIMATE.toString()}+ members`),
+	).toBeNull();
 });

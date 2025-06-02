@@ -10,7 +10,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
 	js.configs.recommended,
-	tseslint.configs.strict, // strictTypeChecked,
+	tseslint.configs.strictTypeChecked,
 
 	importPlugin.flatConfigs.typescript,
 	jsxA11y.flatConfigs.recommended,
