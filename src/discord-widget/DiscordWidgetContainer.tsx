@@ -1,15 +1,23 @@
 import {useEffect, useState} from 'preact/hooks';
+import type {z} from 'zod/v4-mini';
 
 import DiscordWidget from './DiscordWidget';
-import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
+import {
+	DiscordWidgetApiSchema,
+	type DiscordWidgetMemberSchema,
+} from './DiscordWidgetMemberType';
 
 export const WIDGET_API_URL =
 	'https://discord.com/api/guilds/947898290735833128/widget.json';
 
+const BOTS = ['Carl-bot', 'Chicorobot', 'Color-Chan', 'Pickle', 'PluralKit'];
+
 export default function DiscordWidgetContainer() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
-	const [members, setMembers] = useState<DiscordWidgetMemberType[]>([]);
+	const [members, setMembers] = useState<
+		z.infer<typeof DiscordWidgetMemberSchema>[]
+	>([]);
 	const [presenceCount, setPresenceCount] = useState(0);
 
 	useEffect(() => {
@@ -20,7 +28,7 @@ export default function DiscordWidgetContainer() {
 		request.onload = () => {
 			let json;
 			try {
-				json = JSON.parse(request.responseText);
+				json = DiscordWidgetApiSchema.parse(JSON.parse(request.responseText));
 			} catch (ex) {
 				console.error('Failed to load Discord members', ex);
 
@@ -35,15 +43,7 @@ export default function DiscordWidgetContainer() {
 				return;
 			}
 
-			const BOTS = [
-				'Carl-bot',
-				'Chicorobot',
-				'Color-Chan',
-				'Pickle',
-				'PluralKit',
-			];
-
-			const members = (json.members as DiscordWidgetMemberType[])
+			const members = json.members
 				.filter((member) => {
 					return !BOTS.includes(member.username);
 				})

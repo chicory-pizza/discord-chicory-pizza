@@ -1,6 +1,8 @@
+import type {z} from 'zod/v4-mini';
+
 import styles from './DiscordWidget.module.css';
 import DiscordWidgetMember from './DiscordWidgetMember';
-import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
+import type {DiscordWidgetMemberSchema} from './DiscordWidgetMemberType';
 import DiscordWidgetPlaceholder from './DiscordWidgetPlaceholder';
 
 export const MEMBER_COUNT_ESTIMATE = 280;
@@ -8,7 +10,7 @@ export const MEMBER_COUNT_ESTIMATE = 280;
 type Props = Readonly<{
 	loading: boolean;
 	error: boolean;
-	members: ReadonlyArray<DiscordWidgetMemberType>;
+	members: z.infer<typeof DiscordWidgetMemberSchema>[];
 	presenceCount: number;
 }>;
 

@@ -1,10 +1,11 @@
 import {useState} from 'preact/hooks';
+import type {z} from 'zod/v4-mini';
 
 import styles from './DiscordWidgetMember.module.css';
-import type {DiscordWidgetMemberType} from './DiscordWidgetMemberType';
+import type {DiscordWidgetMemberSchema} from './DiscordWidgetMemberType';
 
 type Props = Readonly<{
-	member: DiscordWidgetMemberType;
+	member: z.infer<typeof DiscordWidgetMemberSchema>;
 }>;
 
 export default function DiscordWidgetMember({member}: Props) {
