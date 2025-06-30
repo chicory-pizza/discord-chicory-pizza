@@ -13,12 +13,15 @@ export default tseslint.config(
 
 	importPlugin.flatConfigs.typescript,
 	jsxA11y.flatConfigs.recommended,
-	eslintReact.configs['recommended-typescript'],
+	eslintReact.configs['recommended-type-checked'],
 	reactHooks.configs['recommended-latest'],
 	{
 		rules: {
 			'no-var': 'error',
 			'prefer-const': 'warn',
+
+			'@eslint-react/no-leaked-conditional-rendering': 'error',
+			'@eslint-react/prefer-read-only-props': 'error',
 
 			// `importPlugin.flatConfigs.recommended` without slow rules
 			// https://typescript-eslint.io/troubleshooting/typed-linting/performance/#eslint-plugin-import
