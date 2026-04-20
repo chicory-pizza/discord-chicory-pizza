@@ -4,17 +4,7 @@ Website for [https://discord.chicory.pizza](https://discord.chicory.pizza)
 
 ## Development
 
-Requirements:
-
-- [Node v24+](https://nodejs.org)
-
-Steps:
-
-1. git clone
-2. npm install
-3. npm start
-
-This should open the website at http://localhost:5173
+[Check out CONTRIBUTING.md for the full guide!](https://github.com/chicory-pizza/discord-chicory-pizza/blob/main/CONTRIBUTING.md)
 
 ## License
 
