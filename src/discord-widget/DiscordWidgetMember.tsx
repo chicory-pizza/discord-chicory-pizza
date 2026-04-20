@@ -1,5 +1,5 @@
 import {useState} from 'preact/hooks';
-import type {z} from 'zod/v4-mini';
+import type {z} from 'zod/mini';
 
 import styles from './DiscordWidgetMember.module.css';
 import type {DiscordWidgetMemberSchema} from './DiscordWidgetMemberType';
