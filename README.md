@@ -6,7 +6,7 @@ Website for [https://discord.chicory.pizza](https://discord.chicory.pizza)
 
 Requirements:
 
-- [Node v22+](https://nodejs.org)
+- [Node v24+](https://nodejs.org)
 
 Steps:
 

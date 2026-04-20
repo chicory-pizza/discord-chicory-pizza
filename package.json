@@ -11,7 +11,7 @@
 	"private": true,
 	"license": "MPL-2.0",
 	"engines": {
-		"node": ">=22.15"
+		"node": ">=24"
 	},
 	"type": "module",
 	"scripts": {
