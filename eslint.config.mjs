@@ -3,7 +3,7 @@ import eslintReact from '@eslint-react/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
 import {defineConfig} from 'eslint/config';
 import {importX} from 'eslint-plugin-import-x';
-//import jsxA11y from 'eslint-plugin-jsx-a11y';
+import jsxA11yX from 'eslint-plugin-jsx-a11y-x';
 import reactHooks from 'eslint-plugin-react-hooks';
 import testingLibrary from 'eslint-plugin-testing-library';
 import tseslint from 'typescript-eslint';
@@ -15,8 +15,7 @@ export default defineConfig(
 	importX.flatConfigs.typescript,
 	eslintReact.configs['strict-type-checked'],
 	reactHooks.configs.flat.recommended,
-	// Temporarily removed to unblock ESLint v10
-	// jsxA11y.flatConfigs.recommended,
+	jsxA11yX.configs.strict,
 	{
 		rules: {
 			'no-var': 'error',
