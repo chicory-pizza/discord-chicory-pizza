@@ -13,10 +13,10 @@ export default defineConfig(
 	tseslint.configs.strictTypeChecked,
 
 	importX.flatConfigs.typescript,
-	// Temporarily removed to unblock ESLint v10
-	// jsxA11y.flatConfigs.recommended,
 	eslintReact.configs['strict-type-checked'],
 	reactHooks.configs.flat.recommended,
+	// Temporarily removed to unblock ESLint v10
+	// jsxA11y.flatConfigs.recommended,
 	{
 		rules: {
 			'no-var': 'error',

@@ -6,7 +6,6 @@ import {defineConfig} from 'vite';
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [preactVite()],
-
 	server: {
 		// Keep this in sync with /public/_headers
 		headers: {
@@ -44,7 +43,6 @@ export default defineConfig({
 			].join(';'),
 		},
 	},
-
 	test: {
 		environment: 'happy-dom',
 		setupFiles: ['tests/vitest.setup.ts'],
