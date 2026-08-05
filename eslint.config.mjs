@@ -5,6 +5,7 @@ import {defineConfig} from 'eslint/config';
 import {importX} from 'eslint-plugin-import-x';
 import jsxA11yX from 'eslint-plugin-jsx-a11y-x';
 import reactHooks from 'eslint-plugin-react-hooks';
+import {reactRefresh} from 'eslint-plugin-react-refresh';
 import testingLibrary from 'eslint-plugin-testing-library';
 import tseslint from 'typescript-eslint';
 
@@ -15,6 +16,7 @@ export default defineConfig(
 	importX.flatConfigs.typescript,
 	eslintReact.configs['strict-type-checked'],
 	reactHooks.configs.flat.recommended,
+	reactRefresh.configs.vite(),
 	jsxA11yX.configs.strict,
 	{
 		rules: {
