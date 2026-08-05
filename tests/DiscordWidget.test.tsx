@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/preact';
 import {http, HttpResponse} from 'msw';
-import {afterEach, expect, vi, test} from 'vitest';
+import {afterEach, expect, test, vi} from 'vitest';
 
 import {MEMBER_COUNT_ESTIMATE} from '../src/discord-widget/DiscordWidget';
 import DiscordWidgetContainer, {
