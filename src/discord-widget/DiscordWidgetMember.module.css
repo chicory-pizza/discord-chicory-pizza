@@ -26,13 +26,13 @@
 }
 
 .statusOnline {
-	background: rgb(59, 165, 93);
+	background: rgb(35, 165, 90);
 }
 
 .statusIdle {
-	background: rgb(250, 168, 26);
+	background: rgb(240, 178, 50);
 }
 
 .statusDnd {
-	background: rgb(237, 66, 69);
+	background: rgb(242, 63, 67);
 }
