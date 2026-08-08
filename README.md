@@ -2,7 +2,7 @@
 
 Website for [https://discord.chicory.pizza](https://discord.chicory.pizza)
 
-## Development
+## Contributing
 
 [Check out CONTRIBUTING.md for the full guide!](https://github.com/chicory-pizza/discord-chicory-pizza/blob/main/CONTRIBUTING.md)
 

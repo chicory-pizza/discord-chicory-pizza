@@ -1,4 +1,4 @@
-# Getting started
+# Developing discord.chicory.pizza
 
 First, install [Node.js v24+](https://nodejs.org).
 
