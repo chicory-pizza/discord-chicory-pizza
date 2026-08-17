@@ -1,5 +1,5 @@
 // eslint-disable-next-line testing-library/no-manual-cleanup
-import {cleanup as cleanupPreact} from '@testing-library/preact';
+import {cleanup as cleanupTestingLibrary} from '@testing-library/preact';
 import {afterAll, afterEach, beforeAll} from 'vitest';
 
 import {server} from './mocks/node';
@@ -10,7 +10,7 @@ beforeAll(() => {
 
 afterEach(() => {
 	server.resetHandlers();
-	cleanupPreact();
+	cleanupTestingLibrary();
 });
 
 afterAll(() => {
