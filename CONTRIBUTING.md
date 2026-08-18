@@ -15,7 +15,7 @@ This project is a [Preact](https://preactjs.com) app for smaller file sizes.
 
 ## Code style
 
-Use [Prettier](https://prettier.io). Run `npm run prettier -- --write` to auto-fix.
+Use [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) (previously used [Prettier](https://prettier.io)). Run `npm run format` to auto-fix.
 
 ## Type-checking
 
@@ -34,5 +34,5 @@ Use [Vitest](https://vitest.dev). Run `npm test` to run the tests.
 The test suites are run on every push, it's best to run them on your system to avoid CI failures afterwards:
 
 ```bash
-npm run tsc -- -b && npm run lint && npm test -- --run && npm run prettier -- -c
+npm run tsc -- -b && npm run lint && npm test -- --run && npm run format -- --check
 ```
