@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/preact';
 import {http, HttpResponse} from 'msw';
-import {afterEach, expect, test, vi} from 'vitest';
+import {expect, test, vi} from 'vitest';
 
 import {MEMBER_COUNT_ESTIMATE} from '../src/discord-widget/DiscordWidget';
 import DiscordWidgetContainer, {
@@ -8,10 +8,6 @@ import DiscordWidgetContainer, {
 } from '../src/discord-widget/DiscordWidgetContainer';
 
 import {server} from './mocks/node';
-
-afterEach(() => {
-	vi.restoreAllMocks();
-});
 
 test('renders members', async () => {
 	render(<DiscordWidgetContainer />);
