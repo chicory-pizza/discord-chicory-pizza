@@ -1,8 +1,18 @@
-import {http, HttpResponse} from 'msw';
+import {http, HttpResponse} from 'msw/http';
 
 import {WIDGET_API_URL} from '../../src/discord-widget/DiscordWidgetContainer';
 
 export const handlers = [
+	// For CORS
+	http.options(WIDGET_API_URL, () => {
+		return new Response(null, {
+			status: 200,
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+			},
+		});
+	}),
+
 	http.get(WIDGET_API_URL, () => {
 		return HttpResponse.json({
 			id: '947898290735833128',

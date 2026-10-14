@@ -13,6 +13,9 @@ export default defineConfig(({mode}) => {
 		test: {
 			environment: 'happy-dom',
 			setupFiles: ['tests/setup-tests.ts'],
+			// mocking `console.error` in the test to intentionally check for errors
+			// still causes console spam -_-
+			disableConsoleIntercept: true,
 		},
 	};
 });
